@@ -1,0 +1,42 @@
+{
+  "name": "nextjs-starwars",
+  "version": "1.0.0",
+  "description": "startwas-app-nextjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsatria/nextjs-starwars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bsatria/nextjs-starwars/issues"
+  },
+  "homepage": "https://github.com/bsatria/nextjs-starwars#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.1.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.2",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2"
+  }
+}
