@@ -10,15 +10,15 @@ app.prepare().then(() => {
   const server = express();
 
   server.get("/", (req, res) => {
-    return app.render(req, res, "/", req.query);
+    app.render(req, res, "/", req.query);
   });
 
   server.get("/people/:id", (req, res) => {
-    return app.render(req, res, "/detail", { id: req.params.id });
+    app.render(req, res, "/detail", { id: req.params.id });
   });
 
   server.get("*", (req, res) => {
-    return handle(req, res);
+    handle(req, res);
   });
 
   server.listen(port, err => {
