@@ -4,10 +4,12 @@
   "description": "startwas-app-nextjs",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "test": "jest",
+    "lint": "eslint \"./commons/**\"",
+    "dev": "node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "npm-run-all build start"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
@@ -33,10 +36,23 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-styled-components": "^1.10.2",
     "cross-env": "^5.2.0",
     "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "jest": "^24.8.0",
+    "jest-dom": "^3.5.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2"
   }
 }

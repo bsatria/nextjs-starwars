@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "next/link";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, Icon, Image, Grid } from "semantic-ui-react";
+import Link from "next/link";
+import { Card, Image, Grid } from "semantic-ui-react";
 
 const Cards = ({ val }) => {
   const url = val.url.split("/");
@@ -10,22 +10,27 @@ const Cards = ({ val }) => {
       <Card>
         <Image src="https://react.semantic-ui.com/images/wireframe/image.png" />
         <Card.Content>
-          <Card.Header as={Link} to={`${url[4]}/${url[5]}`}>
-            {val.name}
+          <Card.Header>
+            <Link
+              href={`/${url[4]}/${url[5]}`}
+              as={`/${url[4]}/${url[5]}`}
+              prefetch
+            >
+              {val.name}
+            </Link>
           </Card.Header>
           <Card.Meta>
             <span className="date">{val.birth_year}</span>
           </Card.Meta>
-          <Card.Description>{`${val.name} have a ${val.eye_color} eye, ${
-            val.hair_color
-          } hair, ${val.skin_color} skin, ${val.height} height and ${
-            val.gender
-          } gender `}</Card.Description>
+          <Card.Description>{`${val.name} have a ${val.eye_color} eye, ${val.hair_color} hair, ${val.skin_color} skin, ${val.height} height and ${val.gender} gender `}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Link to={`${url[4]}/${url[5]}`}>
-            <Icon name="user" />
-            See Detail
+          <Link
+            href={`/${url[4]}/${url[5]}`}
+            as={`/${url[4]}/${url[5]}`}
+            prefetch
+          >
+            <a>See Detail</a>
           </Link>
         </Card.Content>
       </Card>

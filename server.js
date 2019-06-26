@@ -9,12 +9,12 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get("/:id", (req, res) => {
+  server.get("/", (req, res) => {
     return app.render(req, res, "/", req.query);
   });
 
-  server.get("/movie/:id", (req, res) => {
-    return app.render(req, res, "/movie", { id: req.params.id });
+  server.get("/people/:id", (req, res) => {
+    return app.render(req, res, "/detail", { id: req.params.id });
   });
 
   server.get("*", (req, res) => {

@@ -22,13 +22,6 @@ const movieListFail = error => ({
   error: true
 });
 
-const movieDetail = data => ({
-  type: actionTypes.GET_MOVIE_LIST_CHILDREN,
-  payload: {
-    movie_detail: data
-  }
-});
-
 // component
 export const getMovie = query => dispatch => {
   dispatch(movieListReq());
@@ -42,21 +35,11 @@ export const getMovie = query => dispatch => {
     .catch(error => dispatch(movieListFail(error)));
 };
 
-export const getMovieDetail = query => dispatch => {
-  const url = `${STAR_WARS_API}/people/${query}`;
-  return fetch(url, "get")
-    .then(result => {
-      dispatch(movieDetail(result));
-      return result;
-    })
-    .catch(error => error);
-};
-
 export const getMovieSearch = query => dispatch => {
   const url = `${STAR_WARS_API}/people/?search=${query}`;
   return fetch(url, "get")
     .then(result => {
-      dispatch(movieDetail(result));
+      dispatch(movieList(result));
       return result;
     })
     .catch(error => error);

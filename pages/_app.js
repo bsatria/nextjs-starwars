@@ -1,6 +1,7 @@
 import React from "react";
 import App, { Container } from "next/app";
 import Router from "next/router";
+import NProgress from "nprogress";
 import { Provider } from "react-redux";
 
 import withReduxStore from "../lib/with-redux-store";
