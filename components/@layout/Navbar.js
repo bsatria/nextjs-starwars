@@ -52,7 +52,7 @@ const Navbar = ({ search }) => (
 );
 
 Navbar.propTypes = {
-  search: PropTypes.func.isRequired
+  search: PropTypes.func
 };
 
 export default Navbar;
