@@ -1,6 +1,6 @@
 # nextjs-starwars
 
-- How to Run :
+- first, you have to run :
   npm install
 
 - development
