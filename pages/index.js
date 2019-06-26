@@ -21,10 +21,9 @@ class WrapHome extends Component {
   }
 
   onSearch = debounce((e, data) => {
-    const { router } = this.props;
     Router.push({
       pathname: "/",
-      query: { page: router.query.page, search: data.value }
+      query: { page: 1, search: data.value }
     });
   }, 500);
 
