@@ -1,21 +1,21 @@
 # nextjs-starwars
 
-- first, you have to run :
-  ``
-  npm install
+first, you have to run :
+``
+npm install
 
-- development
-  ``
-  npm run dev
+development
+``
+npm run dev
 
-- test
-  ``
-  npm run test
+test
+``
+npm run test
 
-- build
-  ``
-  npm run build
+build
+``
+npm run build
 
-- prod
-  ``
-  npm run prod
+prod
+``
+npm run prod
