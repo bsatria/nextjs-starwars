@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { Card, Image, Grid } from "semantic-ui-react";
@@ -16,7 +16,7 @@ const Cards = ({ val }) => {
               as={`/${url[4]}/${url[5]}`}
               prefetch
             >
-              {val.name}
+              <a>{val.name}</a>
             </Link>
           </Card.Header>
           <Card.Meta>

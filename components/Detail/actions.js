@@ -26,7 +26,7 @@ const movieDetail = data => ({
 // eslint-disable-next-line import/prefer-default-export
 export const getMovieDetail = query => dispatch => {
   dispatch(movieDetailReq());
-  const url = `${STAR_WARS_API}people/${query}`;
+  const url = `${STAR_WARS_API}${query}`;
   return fetch(url, "get")
     .then(result => {
       dispatch(movieDetail(result));

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Router, { withRouter } from "next/router";
+import Router from "next/router";
 import { connect } from "react-redux";
 import { Grid, Pagination } from "semantic-ui-react";
 
 import Cards from "./Cards";
-
-import { getMovie } from "./actions";
 
 class Home extends Component {
   static propTypes = {
@@ -24,11 +22,10 @@ class Home extends Component {
   }
 
   changePage = (event, { activePage }) => {
-    const { dispatch } = this.props;
-    dispatch(getMovie(activePage));
+    const { router } = this.props;
     Router.push({
       pathname: "/",
-      query: { page: activePage }
+      query: { page: activePage, search: router.query.search }
     });
     this.setState({
       page: activePage
@@ -46,9 +43,9 @@ class Home extends Component {
     return (
       <Grid style={{ paddingLeft: 20, boxSizing: "border-box" }}>
         <Grid.Row columns={5}>
-          {movies.map((val, id) => (
-            <Cards val={val} key={id} />
-          ))}
+          {movies.length > 0
+            ? movies.map((val, id) => <Cards val={val} key={id} />)
+            : "Data tidak ditemukan"}
         </Grid.Row>
         <Grid
           columns={1}
@@ -73,4 +70,4 @@ const mapStateToProps = state => {
   return { movie };
 };
 
-export default connect(mapStateToProps)(withRouter(Home));
+export default connect(mapStateToProps)(Home);

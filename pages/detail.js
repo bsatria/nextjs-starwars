@@ -5,8 +5,8 @@ import { getMovieDetail } from "../components/Detail/actions";
 
 class WrapDetail extends Component {
   static async getInitialProps(context) {
-    const { reduxStore, query } = context;
-    const movieDetail = await reduxStore.dispatch(getMovieDetail(query.id));
+    const { reduxStore, asPath } = context;
+    const movieDetail = await reduxStore.dispatch(getMovieDetail(asPath));
     return { movieDetail };
   }
 

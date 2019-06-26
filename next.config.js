@@ -1,5 +1,5 @@
 module.exports = {
   env: {
-    STAR_WARS_API: "https://swapi.co/api/"
+    STAR_WARS_API: "https://swapi.co/api"
   }
 };

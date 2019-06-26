@@ -1,8 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { Header, Container, Menu, Segment, Button } from "semantic-ui-react";
+import PropTypes from "prop-types";
+import {
+  Header,
+  Container,
+  Menu,
+  Segment,
+  Button,
+  Input
+} from "semantic-ui-react";
 
-const Navbar = () => (
+const Navbar = ({ search }) => (
   <Segment
     textAlign="center"
     style={{
@@ -36,8 +44,15 @@ const Navbar = () => (
           marginTop: 30
         }}
       />
+      {typeof search === "function" && (
+        <Input icon="search" placeholder="Search..." onChange={search} />
+      )}
     </Container>
   </Segment>
 );
+
+Navbar.propTypes = {
+  search: PropTypes.func.isRequired
+};
 
 export default Navbar;

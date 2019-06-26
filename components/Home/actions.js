@@ -25,8 +25,8 @@ const movieListFail = error => ({
 // component
 export const getMovie = query => dispatch => {
   dispatch(movieListReq());
-  const queryNul = query || "";
-  const url = `${STAR_WARS_API}people/?page=${queryNul}`;
+  const queryNul = query === "/" ? "/people/?page=1" : `/people${query}`;
+  const url = `${STAR_WARS_API}${queryNul}`;
   return fetch(url, "get")
     .then(result => {
       dispatch(movieList(result));
@@ -36,7 +36,7 @@ export const getMovie = query => dispatch => {
 };
 
 export const getMovieSearch = query => dispatch => {
-  const url = `${STAR_WARS_API}/people/?search=${query}`;
+  const url = `${STAR_WARS_API}${query}`;
   return fetch(url, "get")
     .then(result => {
       dispatch(movieList(result));
