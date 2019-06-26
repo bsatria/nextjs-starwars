@@ -1,21 +1,34 @@
-# nextjs-starwars
+## Prerequisites
 
-first, you have to run :
-``
-npm install
+- Nodejs v8
+- yarn / npm
 
-development
-``
-npm run dev
+## Install
 
-test
-``
-npm run test
+```shell
+    npm install
+```
 
-build
-``
-npm run build
+## development
 
-prod
-``
-npm run prod
+```shell
+    npm run dev
+```
+
+## test
+
+```shell
+    npm run test
+```
+
+## build
+
+```shell
+    npm run build
+```
+
+## prod
+
+```shell
+    npm run prod
+```
