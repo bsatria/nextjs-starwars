@@ -21,6 +21,22 @@
     npm run test
 ```
 
+## test with cypress
+
+open terminal 1
+
+```shell
+    npm run dev
+
+```
+
+open terminal 2
+
+```shell
+    npm run cypress
+
+```
+
 ## build
 
 ```shell
